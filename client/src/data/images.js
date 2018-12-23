@@ -13,5 +13,5 @@ export default [{
   }, {
     name: "Butterfly",
     src: "/assets/images/chain-1812013_1920.jpg",
-    description: "A medallion said to give the owner good luck. The teal stones contain droplets of pure water found in a remote island off the coast of Iceland; the red stones contain the blood of Dracula; the yellow stones contain honey from Winnie the Pooh's hive"
+    description: "A medallion said to give the owner good luck. The teal stones contain droplets of pure water found in a remote island off the coast of Iceland; the red stones contain the blood of Dracula; the yellow stones contain honey from Winnie the Pooh's hive."
   }];

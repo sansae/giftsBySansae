@@ -5,15 +5,30 @@ class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0] };
+    this.state = { currentImg: imageData[0], page: 1 };
   }
 
   handleImageClick(image) {
     this.setState({ currentImg: image });
   }
 
+  showFullImg(image, modal) {
+    // alert(`${image}`);
+    alert(modal);
+    // var modal = document.getElementById('myModal');
+  }
+
   render() {
     let divItems = [];
+    let modal = [];
+
+    modal.push(
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01" alt=""></img>
+        <div id="caption"></div>
+      </div>
+    )
 
     imageData.map( image => {
       return divItems.push(
@@ -35,7 +50,7 @@ class Landing extends React.Component {
 
         <section className="display">
           <div className="item">
-            <img src={this.state.currentImg.src} alt={this.state.currentImg.name}></img>
+            <img onClick={() => this.showFullImg(this.state.currentImg.src, modal)} src={this.state.currentImg.src} alt={this.state.currentImg.name}></img>
           </div>
         </section>
 
@@ -51,6 +66,17 @@ class Landing extends React.Component {
         <section className="item-collection">
           {divItems}
         </section>
+
+        <section className="carousel">
+          <div className="page-number">{this.state.page} of 3</div>
+          <div className="prev-next">
+            <p>prev</p>
+            <p>next</p>
+          </div>
+
+        </section>
+
+        <footer className="contact">Contact Us</footer>
       </div>
     )
   }
