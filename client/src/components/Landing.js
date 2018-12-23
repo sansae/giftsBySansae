@@ -1,38 +1,22 @@
 import React from 'react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 import imageData from './../data/images';
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1 };
-  }
-
-  handleImageClick(image) {
-    this.setState({ currentImg: image });
-  }
-
-  showFullImg(image, modal) {
-    // alert(`${image}`);
-    alert(modal);
-    // var modal = document.getElementById('myModal');
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0 };
   }
 
   render() {
+    const { photoIndex, isOpen } = this.state;
     let divItems = [];
-    let modal = [];
-
-    modal.push(
-      <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01" alt=""></img>
-        <div id="caption"></div>
-      </div>
-    )
 
     imageData.map( image => {
       return divItems.push(
-        <div onClick={() => this.handleImageClick(image)}>
+        <div onClick={() => this.setState({ currentImg: image })}>
           <img src={image.src} alt={image.name} class="img-item"></img>
           <p>{image.name}</p>
         </div>
@@ -50,9 +34,33 @@ class Landing extends React.Component {
 
         <section className="display">
           <div className="item">
-            <img onClick={() => this.showFullImg(this.state.currentImg.src, modal)} src={this.state.currentImg.src} alt={this.state.currentImg.name}></img>
+            <img onClick={() => this.setState({isOpen: true})} src={this.state.currentImg.src} alt={this.state.currentImg.name}></img>
+
+            {isOpen && (
+              <Lightbox
+                mainSrc={imageData[photoIndex].src}
+                nextSrc={imageData[(photoIndex + 1) % imageData.length].src}
+                prevSrc={imageData[(photoIndex + imageData.length - 1) % imageData.length].src}
+                onCloseRequest={() =>
+                  this.setState({
+                    isOpen: false,
+                  })
+                }
+                onMovePrevRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + imageData.length - 1) % imageData.length
+                  })
+                }
+                onMoveNextRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + 1) % imageData.length
+                  })
+                }
+              />
+            )}
           </div>
         </section>
+
 
         <section className="item-description">
           {this.state.currentImg.description}
