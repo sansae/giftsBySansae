@@ -1,12 +1,18 @@
 import React from 'react';
-
+import imageData from './../data/images';
 
 class Landing extends React.Component {
   render() {
     let divItems = [];
-    for (var i = 0; i < 7; i++) {
-      divItems.push(<div class="div-item">hi world</div>);
-    }
+
+    imageData.map( image => {
+      return divItems.push(
+        <div>
+          <img src={image.src} alt={image.name} class="img-item"></img>
+          <p>{image.name}</p>
+        </div>
+      )
+    })
 
     return (
       <div>
@@ -19,7 +25,7 @@ class Landing extends React.Component {
 
         <section className="display">
           <div className="add-cart">
-              Add to cart
+            Add to cart
           </div>
           <div className="item">
               display item here

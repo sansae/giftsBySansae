@@ -70,19 +70,13 @@
 }
 
 .item-collection {
-  /*border: 3px solid black;*/
   margin-top: 50px;
   display: flex;
-  /*flex-direction: column;*/
   align-items: center;
-  /*justify-content: center;*/
   justify-content: space-around;
 }
 
-.div-item {
-  border: 3px solid green;
-  min-width: 10vw;
-  min-height: 10vh;
-  /*align-items: center;
-  justify-content: center;*/
+.img-item {
+  width: 12vw;
+  height: 10vw;
 }
