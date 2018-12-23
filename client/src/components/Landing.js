@@ -2,6 +2,8 @@ import React from 'react';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import imageData from './../data/images';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -18,7 +20,20 @@ class Landing extends React.Component {
       return divItems.push(
         <div onClick={() => this.setState({ currentImg: image })}>
           <img src={image.src} alt={image.name} class="img-item"></img>
-          <p>{image.name}</p>
+          <p className="item-name">
+            {image.name}
+          </p>
+          <p>Base Price: {image.price}</p>
+          {/*
+          <p>Bids: {image.bids}</p>
+          <p>
+            Current Bid: {image.currentBid}
+          </p>
+          <p>
+            Days Remaining: {image.daysLeft}
+          </p>
+          <button>Place New Bid</button>
+          */}
         </div>
       )
     })
@@ -61,7 +76,6 @@ class Landing extends React.Component {
           </div>
         </section>
 
-
         <section className="item-description">
           {this.state.currentImg.description}
           <div className="add-cart"><span>Add to Cart</span></div>
@@ -76,12 +90,13 @@ class Landing extends React.Component {
         </section>
 
         <section className="carousel">
-          <div className="page-number">{this.state.page} of 3</div>
+          <div className="page-number">
+            {this.state.page} of 3
+          </div>
           <div className="prev-next">
             <p>prev</p>
             <p>next</p>
           </div>
-
         </section>
 
         <footer className="contact">Contact Us</footer>

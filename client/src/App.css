@@ -59,8 +59,12 @@
   justify-content: space-around;
 }
 
-.item-collection div {
+.item-collection div img {
   cursor: pointer;
+}
+
+.item-name {
+  text-decoration: underline;
 }
 
 .img-item {
@@ -94,4 +98,5 @@
 
 .prev-next p {
   margin: 0px 8px;
+  cursor: pointer;
 }
