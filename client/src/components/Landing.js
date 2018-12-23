@@ -8,12 +8,16 @@ class Landing extends React.Component {
     this.state = { currentImg: imageData[0] };
   }
 
+  handleImageClick(image) {
+    this.setState({ currentImg: image });
+  }
+
   render() {
     let divItems = [];
 
     imageData.map( image => {
       return divItems.push(
-        <div>
+        <div onClick={() => this.handleImageClick(image)}>
           <img src={image.src} alt={image.name} class="img-item"></img>
           <p>{image.name}</p>
         </div>
