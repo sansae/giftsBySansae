@@ -2,8 +2,8 @@ import React from 'react';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import imageData from './../data/images';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
+// import AliceCarousel from 'react-alice-carousel';
+// import 'react-alice-carousel/lib/alice-carousel.css';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -13,6 +13,21 @@ class Landing extends React.Component {
   }
 
   render() {
+    // const handleOnDragStart = e => e.preventDefault();
+
+    // const settings = {
+    //   mouseDragEnabled: true,
+    //   dotsDisabled: true,
+    //   showSlideInfo: true,
+    //   responsive: {
+    //     0: {
+    //       items: 3
+    //     },
+    //   },
+    //   startIndex: 0,
+    //   slideToIndex: 4,
+    // };
+
     const { photoIndex, isOpen } = this.state;
     let divItems = [];
 
@@ -99,6 +114,12 @@ class Landing extends React.Component {
           </div>
         </section>
 
+        {/*
+        <AliceCarousel {...settings} >
+          {divItems}
+        </AliceCarousel>
+        */}
+        
         <footer className="contact">Contact Us</footer>
       </div>
     )

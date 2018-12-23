@@ -30,4 +30,20 @@ export default [{
     bids: 6,
     currentBid: "$135.8k",
     daysLeft: 34,
+  }, {
+    name: "Rotary Phone",
+    src: "/assets/images/old-956455_1920.jpg",
+    description: "An old rotary phone from World War II said to have been used by Adolf Hitler. Reports say it has bad luck.",
+    price: "$10k",
+    bids: 2,
+    currentBid: "$12.5k",
+    daysLeft: 88,
+  }, {
+    name: "Four-Leaf Clover",
+    src: "/assets/images/klee-941597_1920.jpg",
+    description: "A mythical item that originates from Ireland and said to have been previously owned by a leprechaun. You can be the one to own the world's only four-leaf clover for just $1,000 USD (also willing to trade for a pot of real gold)",
+    price: "$1k",
+    bids: 0,
+    currentBid: '',
+    daysLeft: '',
   }];
