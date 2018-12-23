@@ -3,6 +3,11 @@ import React from 'react';
 
 class Landing extends React.Component {
   render() {
+    let divItems = [];
+    for (var i = 0; i < 7; i++) {
+      divItems.push(<div class="div-item">hi world</div>);
+    }
+
     return (
       <div>
         <section className="App-header">
@@ -25,12 +30,12 @@ class Landing extends React.Component {
           item description here
         </section>
 
-        <section className="">
-          <h4>Select an item to view</h4>
+        <section className="select-item-header">
+          <h4>Select An Item To View</h4>
         </section>
 
         <section className="item-collection">
-
+          {divItems}
         </section>
       </div>
     )

@@ -63,3 +63,26 @@
   padding-bottom: 20px;
   border-bottom: 3px solid lightgrey;
 }
+
+.select-item-header {
+  /*border: 3px solid orange;*/
+  margin-top: 50px;
+}
+
+.item-collection {
+  /*border: 3px solid black;*/
+  margin-top: 50px;
+  display: flex;
+  /*flex-direction: column;*/
+  align-items: center;
+  /*justify-content: center;*/
+  justify-content: space-around;
+}
+
+.div-item {
+  border: 3px solid green;
+  min-width: 10vw;
+  min-height: 10vh;
+  /*align-items: center;
+  justify-content: center;*/
+}
