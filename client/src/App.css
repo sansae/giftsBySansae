@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  /*border: 3px solid red;*/
   margin-bottom: 60px;
 }
 
@@ -12,21 +11,14 @@
 }
 
 .custom-brand {
-  margin-bottom: 50px;
   color: #777;
   font-family: cursive;
 }
 
 .App-header {
-  /*background-color: #282c34;*/
-  /*min-height: 100vh;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*justify-content: center;*/
-  /*font-size: calc(10px + 2vmin);*/
-  /*color: white;*/
-  /*border: 2px solid red;*/
 }
 
 .page-header {
@@ -38,24 +30,21 @@
 }
 
 .display {
-  margin-top: 20px;
   border-top: 3px solid lightgrey;
   border-bottom: 3px solid lightgrey;
 }
 
-.display > .add-cart {
-  border: 3px solid red;
-  text-align: right;
-  padding: 45px 85px 25px 0px;
-}
-
 .display > .item {
-  border: 3px solid blue;
-  min-height: 50vh;
+  height: 29vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.display .item img {
+  width: 28vw;
+  height: 28vw;
+  border: 3px solid lightgrey;
 }
 
 .item-description {
@@ -64,19 +53,22 @@
   border-bottom: 3px solid lightgrey;
 }
 
-.select-item-header {
-  /*border: 3px solid orange;*/
-  margin-top: 50px;
-}
-
 .item-collection {
-  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
+.item-collection div {
+  cursor: pointer;
+}
+
 .img-item {
-  width: 12vw;
-  height: 10vw;
+  width: 8vw;
+  height: 6vw;
+}
+
+.add-cart > span{
+  color: green;
+  cursor: pointer;
 }

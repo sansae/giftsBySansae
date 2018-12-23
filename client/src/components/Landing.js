@@ -2,6 +2,12 @@ import React from 'react';
 import imageData from './../data/images';
 
 class Landing extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { currentImg: imageData[0] };
+  }
+
   render() {
     let divItems = [];
 
@@ -24,16 +30,14 @@ class Landing extends React.Component {
         </section>
 
         <section className="display">
-          <div className="add-cart">
-            Add to cart
-          </div>
           <div className="item">
-              display item here
+            <img src={this.state.currentImg.src} alt={this.state.currentImg.name}></img>
           </div>
         </section>
 
         <section className="item-description">
-          item description here
+          {this.state.currentImg.description}
+          <div className="add-cart"><span>Add to Cart</span></div>
         </section>
 
         <section className="select-item-header">
