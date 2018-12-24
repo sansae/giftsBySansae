@@ -2,8 +2,9 @@ import React from 'react';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import imageData from './../data/images';
-// import AliceCarousel from 'react-alice-carousel';
-// import 'react-alice-carousel/lib/alice-carousel.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -12,24 +13,29 @@ class Landing extends React.Component {
     this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0 };
   }
 
+  next(totalPages) {
+    this.slider.slickNext();
+
+    this.setState({page: this.state.page + 1});
+
+    if (this.state.page === totalPages) {
+      this.setState({page: 1});
+    }
+  }
+
+  previous(totalPages) {
+    this.slider.slickPrev();
+
+    this.setState({page: this.state.page - 1});
+
+    if (this.state.page === 1) {
+      this.setState({page: totalPages});
+    }
+  }
+
   render() {
-    // const handleOnDragStart = e => e.preventDefault();
-
-    // const settings = {
-    //   mouseDragEnabled: true,
-    //   dotsDisabled: true,
-    //   showSlideInfo: true,
-    //   responsive: {
-    //     0: {
-    //       items: 3
-    //     },
-    //   },
-    //   startIndex: 0,
-    //   slideToIndex: 4,
-    // };
-
     const { photoIndex, isOpen } = this.state;
-    let divItems = [];
+    const divItems = [];
 
     imageData.map( image => {
       return divItems.push(
@@ -52,6 +58,15 @@ class Landing extends React.Component {
         </div>
       )
     })
+
+    const settings = {
+      arrows: false,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      swipeToSlide: true,
+    };
+
+    const totalPages = Math.ceil(divItems.length / settings.slidesToShow);
 
     return (
       <div>
@@ -100,26 +115,22 @@ class Landing extends React.Component {
           <h4>Select An Item To View</h4>
         </section>
 
-        <section className="item-collection">
+        <Slider className="slider" ref={c => (this.slider = c)} {...settings}>
           {divItems}
-        </section>
+        </Slider>
 
-        <section className="carousel">
+        <div>
+          <button className="button" onClick={() => this.previous(totalPages)}>
+            Prev
+          </button>
+          <button className="button" onClick={() => this.next(totalPages)}>
+            Next
+          </button>
           <div className="page-number">
-            {this.state.page} of 3
+            {this.state.page} of {totalPages}
           </div>
-          <div className="prev-next">
-            <p>prev</p>
-            <p>next</p>
-          </div>
-        </section>
+        </div>
 
-        {/*
-        <AliceCarousel {...settings} >
-          {divItems}
-        </AliceCarousel>
-        */}
-        
         <footer className="contact">Contact Us</footer>
       </div>
     )

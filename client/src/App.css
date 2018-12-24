@@ -53,18 +53,9 @@
   border-bottom: 3px solid lightgrey;
 }
 
-.item-collection {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.item-collection div img {
+.add-cart > span{
+  color: green;
   cursor: pointer;
-}
-
-.item-name {
-  text-decoration: underline;
 }
 
 .img-item {
@@ -72,10 +63,18 @@
   height: 6vw;
 }
 
-.add-cart > span{
-  color: green;
-  cursor: pointer;
+.item-name {
+  text-decoration: underline;
 }
+
+.slider > div img {
+  display: inline;
+}
+
+.button {
+  margin: 0px 10px;
+}
+
 
 .contact {
   /*border: 3px solid red;*/
@@ -83,20 +82,4 @@
   margin: 30px 90px 30px 0px;
   font-size: 18px;
   color: #777;
-}
-
-.carousel {
-  /*display: flex;
-  flex-direction: column;*/
-}
-
-.prev-next {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.prev-next p {
-  margin: 0px 8px;
-  cursor: pointer;
 }
