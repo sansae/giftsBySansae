@@ -37,10 +37,20 @@ class Landing extends React.Component {
     const { photoIndex, isOpen } = this.state;
     const divItems = [];
 
-    imageData.map( image => {
+    imageData.map((image, index) => {
       return divItems.push(
         <div>
-          <img onClick={() => this.setState({ currentImg: image })} src={image.src} alt={image.name} class="img-item"></img>
+          <img
+            onClick={() =>
+              {
+                this.setState({ currentImg: image });
+                this.setState({ photoIndex: index })
+              }
+            }
+            src={image.src}
+            alt={image.name}
+            className="img-item">
+          </img>
           <p className="item-name">
             {image.name}
           </p>
@@ -79,7 +89,11 @@ class Landing extends React.Component {
 
         <section className="display">
           <div className="item">
-            <img onClick={() => this.setState({isOpen: true})} src={this.state.currentImg.src} alt={this.state.currentImg.name}></img>
+            <img
+              onClick={() => this.setState({isOpen: true})}
+              src={this.state.currentImg.src}
+              alt={this.state.currentImg.name}>
+            </img>
 
             {isOpen && (
               <Lightbox
