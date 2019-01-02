@@ -1,4 +1,7 @@
 import React from 'react';
+import { BrowserRouter,  } from 'react-router-dom';
+// import Landing from './Landing';
+// import About from './About';
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavItem } from 'react-bootstrap';
@@ -9,6 +12,7 @@ import { NavItem } from 'react-bootstrap';
 class Navigation extends React.Component {
   render() {
     return (
+      <BrowserRouter>
       <div>
         <Navbar className="custom-navbar">
           <Navbar.Header>
@@ -17,7 +21,8 @@ class Navigation extends React.Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="#">
-                Home
+                {/*<Route exact path="/" component={Landing} />*/}
+                Landing
               </NavItem>
               <NavItem eventKey={2} href="#">
                 About
@@ -40,6 +45,7 @@ class Navigation extends React.Component {
           Gifts by Sansae
         </h1>
       </div>
+      </BrowserRouter>
     )
   }
 }
