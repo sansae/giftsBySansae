@@ -1,19 +1,13 @@
 import React from 'react';
-import { BrowserRouter,  } from 'react-router-dom';
-// import Landing from './Landing';
-// import About from './About';
+import { Link } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavItem } from 'react-bootstrap';
-// import { NavDropdown } from 'react-bootstrap';
-// import { MenuItem } from 'react-bootstrap';
-
 
 class Navigation extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-      <div>
+      <div className="navigation">
         <Navbar className="custom-navbar">
           <Navbar.Header>
             <Navbar.Toggle />
@@ -21,8 +15,7 @@ class Navigation extends React.Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="#">
-                {/*<Route exact path="/" component={Landing} />*/}
-                Landing
+                <Link to="/">Landing</Link>
               </NavItem>
               <NavItem eventKey={2} href="#">
                 About
@@ -33,7 +26,7 @@ class Navigation extends React.Component {
                 Items
               </NavItem>
               <NavItem eventKey={2} href="#">
-                Sign-Up
+                <Link to="signup">Sign-Up</Link>
               </NavItem>
               <NavItem eventKey={3} href="#">
                 Sign-In
@@ -45,7 +38,6 @@ class Navigation extends React.Component {
           Gifts by Sansae
         </h1>
       </div>
-      </BrowserRouter>
     )
   }
 }

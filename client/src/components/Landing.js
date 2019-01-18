@@ -33,6 +33,10 @@ class Landing extends React.Component {
     }
   }
 
+  addToCart() {
+    alert(`add to cart button was clicked`);
+  }
+
   render() {
     const { photoIndex, isOpen } = this.state;
     const divItems = [];
@@ -79,7 +83,7 @@ class Landing extends React.Component {
     const totalPages = Math.ceil(divItems.length / settings.slidesToShow);
 
     return (
-      <div>
+      <div className="landing">
         <section className="App-header">
           <div className="page-header">
             <h3>Our Items</h3>
@@ -122,7 +126,7 @@ class Landing extends React.Component {
 
         <section className="item-description">
           {this.state.currentImg.description}
-          <div className="add-cart"><span>Add to Cart</span></div>
+          <div className="add-cart"><span onClick={() => this.addToCart()}>Add to Cart</span></div>
         </section>
 
         <section className="select-item-header">

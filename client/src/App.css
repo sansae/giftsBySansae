@@ -2,7 +2,7 @@
   outline: none;
 }
 
-.App {
+.navigation, .landing, .signup, .benefits > div > p, .form-header > p {
   text-align: center;
 }
 
@@ -80,6 +80,45 @@
   margin: 0px 10px;
 }
 
+.benefits, .form-header, .form {
+  /*border: 3px solid green;*/
+  text-align: left;
+}
+
+.benefits {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.benefits-list li:before {
+  content: '✓';
+  margin-right: 10px;
+  color: lightgreen;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form-header {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.benefits > div > p, .form-header > p {
+  font-weight: bold;
+}
 
 .contact {
   float: right;
