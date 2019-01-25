@@ -5,12 +5,13 @@ import imageData from './../data/images';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Modal from 'react-modal';
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, div: <div></div> };
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, div: <div></div>, modalIsOpen: false };
   }
 
   next(totalPages) {
@@ -33,6 +34,14 @@ class Landing extends React.Component {
     }
   }
 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
   addToCart() {
     const { currentImg } = this.state;
 
@@ -49,7 +58,7 @@ class Landing extends React.Component {
     })
 
     if (this.props.cart.items.length > 0) {
-      this.setState({div: <div className="view-cart-btn"><button>View Cart</button>
+      this.setState({div: <div className="view-cart-btn"><button onClick={() => {this.openModal()}}>View Cart</button>
       </div>})
     }
   }
@@ -143,10 +152,18 @@ class Landing extends React.Component {
 
         <section className="item-description">
           {this.state.currentImg.description}
-          
+
           <div className="add-cart"><span onClick={() => this.addToCart()}>Add to Cart</span></div>
 
           {this.state.div}
+
+          <Modal isOpen={this.state.modalIsOpen}>
+            <div className="cart-buttons">
+              <button className="checkout">Checkout</button>
+
+              <button className="close-modal" onClick={() => {this.closeModal()}}>Close</button>
+            </div>
+          </Modal>
         </section>
 
         <section className="select-item-header">
