@@ -10,7 +10,7 @@ class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0 };
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, div: <div></div> };
   }
 
   next(totalPages) {
@@ -48,7 +48,10 @@ class Landing extends React.Component {
       src: itemSrc
     })
 
-    console.log(this.props.cart.items);
+    if (this.props.cart.items.length > 0) {
+      this.setState({div: <div className="view-cart-btn"><button>View Cart</button>
+      </div>})
+    }
   }
 
   render() {
@@ -140,7 +143,10 @@ class Landing extends React.Component {
 
         <section className="item-description">
           {this.state.currentImg.description}
+          
           <div className="add-cart"><span onClick={() => this.addToCart()}>Add to Cart</span></div>
+
+          {this.state.div}
         </section>
 
         <section className="select-item-header">
