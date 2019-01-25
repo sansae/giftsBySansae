@@ -2,6 +2,22 @@
   outline: none;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid darkgrey;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .navigation, .landing, .signup, .benefits > div > p, .form-header > p {
   text-align: center;
 }
@@ -26,6 +42,7 @@
 
 .page-header {
   border-bottom: 1px solid #333;
+  text-align: center;
 }
 
 .page-header > i {
@@ -125,4 +142,55 @@ ul {
   margin: 30px 90px 30px 0px;
   font-size: 18px;
   color: #777;
+}
+
+.cart-title {
+  text-align: center;
+}
+
+.view-cart-btn {
+  margin-top: 15px;
+}
+
+.cart-buttons {
+  margin-top: 20px;
+}
+
+.close-modal {
+  float: right;
+}
+
+.shopping-cart {
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /*width: 80%;
+  margin: 0 auto;*/
+}
+
+.cart-pics {
+  /*border: 3px solid red;*/
+  border-radius: 50%;
+  margin-left: 3vw;
+}
+
+.cart-details {
+  font-size: 18px;
+  /*border: 3px solid yellow;*/
+  width: 50vw;
+}
+
+.cart-details span {
+  font-weight: bold;
+}
+
+.cart-pics img {
+  width: 18vw;
+  height: 18vw;
+  border: 3px solid black;
+  border-radius: 50%;
 }

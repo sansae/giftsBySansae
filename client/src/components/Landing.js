@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'react-modal';
+import ShoppingCart from './ShoppingCart';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -158,6 +159,8 @@ class Landing extends React.Component {
           {this.state.div}
 
           <Modal isOpen={this.state.modalIsOpen}>
+            <ShoppingCart cart={this.props.cart} />
+
             <div className="cart-buttons">
               <button className="checkout">Checkout</button>
 
