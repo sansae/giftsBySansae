@@ -34,7 +34,21 @@ class Landing extends React.Component {
   }
 
   addToCart() {
-    alert(`add to cart button was clicked`);
+    const { currentImg } = this.state;
+
+    let itemName = currentImg.name;
+    let itemPrice = currentImg.price;
+    let itemDescription = currentImg.description;
+    let itemSrc = currentImg.src;
+
+    this.props.cart.addItem({
+      name: itemName,
+      price: itemPrice,
+      description: itemDescription,
+      src: itemSrc
+    })
+
+    console.log(this.props.cart.items);
   }
 
   render() {
