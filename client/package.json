@@ -1,6 +1,9 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.15.0"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
