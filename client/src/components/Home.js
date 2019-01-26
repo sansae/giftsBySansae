@@ -13,7 +13,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false, flashMessage: '' };
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false };
   }
 
   next(totalPages) {
@@ -72,12 +72,17 @@ class Home extends React.Component {
   displayFlashMessage() {
     this.setState({
       flashMessage:
-        <FlashMessage duration={3000}>
-          <div className="flash-msg">added to your cart!</div>
+        <FlashMessage duration={5000}>
+          <div className="flash-msg">{this.state.currentImg.name} was added to your cart!</div>
         </FlashMessage>
     });
 
-    console.log(JSON.stringify(this.state.flashMessage));
+    // setTimeout to reset flashMessage
+    setTimeout(() => {
+      this.setState({
+        flashMessage: ''
+      });
+    }, 3001)
   }
 
   render() {
@@ -177,7 +182,7 @@ class Home extends React.Component {
               }
             }>Add to Cart</span></div>
 
-          <div>{this.state.flashMessage}</div>
+          {this.state.flashMessage}
 
           {this.state.viewCartButton}
 
