@@ -8,11 +8,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'react-modal';
 import ShoppingCart from './ShoppingCart';
 
-class Landing extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, div: <div></div>, modalIsOpen: false };
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false, itemCountMessage: '' };
   }
 
   next(totalPages) {
@@ -45,28 +45,33 @@ class Landing extends React.Component {
 
   addToCart() {
     const { currentImg } = this.state;
+    let cart = this.props.cart;
 
     let itemName = currentImg.name;
     let itemPrice = currentImg.price;
     let itemDescription = currentImg.description;
     let itemSrc = currentImg.src;
 
-    this.props.cart.addItem({
+    cart.addItem({
       name: itemName,
       price: itemPrice,
       description: itemDescription,
-      src: itemSrc
-    })
+      src: itemSrc,
+      count: 1
+    });
 
-    if (this.props.cart.items.length > 0) {
-      this.setState({div: <div className="view-cart-btn"><button onClick={() => {this.openModal()}}>View Cart</button>
-      </div>})
+    if (cart.items.length > 0) {
+      this.setState({
+        viewCartButton: <div className="view-cart-btn">
+          <button onClick={() => {this.openModal()}}>View Cart</button>
+        </div>
+      });
     }
   }
 
   render() {
     const { photoIndex, isOpen } = this.state;
-    const divItems = [];
+    var divItems = [];
 
     imageData.map((image, index) => {
       return divItems.push(
@@ -75,7 +80,7 @@ class Landing extends React.Component {
             onClick={() =>
               {
                 this.setState({ currentImg: image });
-                this.setState({ photoIndex: index })
+                this.setState({ photoIndex: index });
               }
             }
             src={image.src}
@@ -110,7 +115,7 @@ class Landing extends React.Component {
     const totalPages = Math.ceil(divItems.length / settings.slidesToShow);
 
     return (
-      <div className="landing">
+      <div className="home">
         <section className="App-header">
           <div className="page-header">
             <h3>Our Items</h3>
@@ -154,9 +159,13 @@ class Landing extends React.Component {
         <section className="item-description">
           {this.state.currentImg.description}
 
-          <div className="add-cart"><span onClick={() => this.addToCart()}>Add to Cart</span></div>
+          <div className="add-cart"><span onClick={() =>
+              {
+                this.addToCart();
+              }
+            }>Add to Cart</span></div>
 
-          {this.state.div}
+          {this.state.viewCartButton}
 
           <Modal isOpen={this.state.modalIsOpen}>
             <ShoppingCart cart={this.props.cart} />
@@ -195,4 +204,4 @@ class Landing extends React.Component {
   }
 }
 
-export default Landing;
+export default Home;

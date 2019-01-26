@@ -7,7 +7,18 @@ export default class {
   }
 
   addItem(item) {
-    this.items.push(item);
+    let extraItem = false;
+
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i].name === item.name) {
+        this.items[i].count += 1;
+        extraItem = true;
+      }
+    }
+
+    if (!extraItem) {
+      this.items.push(item);
+    }
   }
 
   removeItem(item) {

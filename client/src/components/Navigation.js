@@ -15,7 +15,7 @@ class Navigation extends React.Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="#">
-                <Link to="/">Landing</Link>
+                <Link to="/">Home</Link>
               </NavItem>
               <NavItem eventKey={2} href="#">
                 About

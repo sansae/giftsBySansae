@@ -19,42 +19,12 @@ class ShoppingCart extends React.Component {
 
             <div className="cart-details">
               <p><span>Item:</span> {item.name}</p>
-              <p><span>Quantity:</span> 1</p>
-              <p><span>Details:</span>{item.description}</p>
-              <p><span>Price:</span> {item.price}</p>
+              <p><span>Details:</span> {item.description}</p>
+              <p><span>Price Per Count:</span> {item.price}</p>
+              <p><span>count:</span> {item.count}</p>
             </div>
-            {/*
-            <div className="cart-table">
-              <table>
-                <tr>
-                  <th>Item</th>
-                  <th>Price</th>
-                </tr>
-                <tr>
-                  <td>{item.name}</td>
-                  <td>{item.price}</td>
-                </tr>
-              </table>
-            </div>
-            */}
           </section>
         })}
-        {/*
-        <table>
-          <tr>
-            <th></th>
-            <th>Item</th>
-            <th>Price</th>
-          </tr>
-          {this.props.cart.items.map((item, index) => {
-            return <tr>
-                <td><img src={item.src} alt={item.name}></img></td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-              </tr>
-          })}
-        </table>
-        */}
       </div>
     )
   }

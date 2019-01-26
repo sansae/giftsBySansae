@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Landing from './components/Landing';
+import Home from './components/Home';
 import Navigation from './components/Navigation';
 import Signup from './components/Signup';
 import './App.css';
@@ -16,7 +16,7 @@ class App extends Component {
         <Navigation />
 
         <main className="main">
-          <Route exact path="/" component={() => <Landing cart={cart} />} />
+          <Route exact path="/" component={() => <Home cart={cart} />} />
           <Route path="/signup" component={Signup} />
         </main>
 

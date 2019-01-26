@@ -18,7 +18,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.navigation, .landing, .signup, .benefits > div > p, .form-header > p {
+.navigation, .home, .signup, .benefits > div > p, .form-header > p {
   text-align: center;
 }
 
@@ -193,4 +193,8 @@ ul {
   height: 18vw;
   border: 3px solid black;
   border-radius: 50%;
+}
+
+.cart-msg {
+  font-weight: bold;
 }
