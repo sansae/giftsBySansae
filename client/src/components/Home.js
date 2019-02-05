@@ -73,7 +73,7 @@ class Home extends React.Component {
   displayFlashMessage() {
     this.setState({
       flashMessage: <FlashMessage duration={5000}>
-        <div>This is a flash message that will disappear in 5 seconds</div>
+        <div>{this.state.currentImg.name} has been added to the cart!</div>
       </FlashMessage>
     });
   }
