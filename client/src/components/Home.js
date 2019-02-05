@@ -13,7 +13,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false, itemCountMessage: '' };
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false, flashMessage: '' };
   }
 
   next(totalPages) {
@@ -68,6 +68,12 @@ class Home extends React.Component {
         </div>
       });
     }
+  }
+
+  displayFlashMessage() {
+    this.setState({
+      flashMessage: 'this is the flashMessage state'
+    });
   }
 
   render() {
@@ -163,8 +169,11 @@ class Home extends React.Component {
           <div className="add-cart"><span onClick={() =>
               {
                 this.addToCart();
+                this.displayFlashMessage();
               }
             }>Add to Cart</span></div>
+
+          {this.state.flashMessage}
 
           {this.state.viewCartButton}
 
