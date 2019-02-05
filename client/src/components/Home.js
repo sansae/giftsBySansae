@@ -7,13 +7,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'react-modal';
 import ShoppingCart from './ShoppingCart';
-import FlashMessage from 'react-flash-message';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false, flashMessage: '' };
+    this.state = { currentImg: imageData[0], page: 1, isOpen: false, photoIndex: 0, viewCartButton: <div></div>, modalIsOpen: false, itemCountMessage: '' };
   }
 
   next(totalPages) {
@@ -47,6 +46,7 @@ class Home extends React.Component {
   addToCart() {
     const { currentImg } = this.state;
     let cart = this.props.cart;
+
     let itemName = currentImg.name;
     let itemPrice = currentImg.price;
     let itemDescription = currentImg.description;
@@ -67,22 +67,6 @@ class Home extends React.Component {
         </div>
       });
     }
-  }
-
-  displayFlashMessage() {
-    this.setState({
-      flashMessage:
-        <FlashMessage duration={5000}>
-          <div className="flash-msg">{this.state.currentImg.name} was added to your cart!</div>
-        </FlashMessage>
-    });
-
-    // setTimeout to reset flashMessage
-    setTimeout(() => {
-      this.setState({
-        flashMessage: ''
-      });
-    }, 5001)
   }
 
   render() {
@@ -178,11 +162,8 @@ class Home extends React.Component {
           <div className="add-cart"><span onClick={() =>
               {
                 this.addToCart();
-                this.displayFlashMessage();
               }
             }>Add to Cart</span></div>
-
-          {this.state.flashMessage}
 
           {this.state.viewCartButton}
 
