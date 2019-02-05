@@ -73,7 +73,7 @@ class Home extends React.Component {
   displayFlashMessage() {
     this.setState({
       flashMessage: <FlashMessage duration={5000}>
-        <div>{this.state.currentImg.name} has been added to the cart!</div>
+        <div className="flash-msg">{this.state.currentImg.name} has been added to the cart!</div>
       </FlashMessage>
     });
 
@@ -81,7 +81,7 @@ class Home extends React.Component {
       this.setState({
         flashMessage: ''
       });
-    }, 5001)
+    }, 7001)
   }
 
   render() {
@@ -179,9 +179,11 @@ class Home extends React.Component {
                 this.addToCart();
                 this.displayFlashMessage();
               }
-            }>Add to Cart</span></div>
+            }>Add to Cart</span>
 
-          {this.state.flashMessage}
+            {this.state.flashMessage}
+          </div>
+
 
           {this.state.viewCartButton}
 

@@ -195,6 +195,6 @@ ul {
   border-radius: 50%;
 }
 
-.cart-msg {
+.cart-msg, .flash-msg {
   font-weight: bold;
 }
