@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'react-modal';
 import ShoppingCart from './ShoppingCart';
+import FlashMessage from 'react-flash-message';
 
 class Home extends React.Component {
   constructor(props) {
