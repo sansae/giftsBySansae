@@ -76,6 +76,12 @@ class Home extends React.Component {
         <div>{this.state.currentImg.name} has been added to the cart!</div>
       </FlashMessage>
     });
+
+    setTimeout(() => {
+      this.setState({
+        flashMessage: ''
+      });
+    }, 5001)
   }
 
   render() {
