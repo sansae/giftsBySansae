@@ -18,7 +18,7 @@ class Navigation extends React.Component {
                 <Link to="/">Home</Link>
               </NavItem>
               <NavItem eventKey={2} href="#">
-                About
+                <Link to="about">About</Link>
               </NavItem>
             </Nav>
             <Nav pullRight>
