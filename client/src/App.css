@@ -198,3 +198,7 @@ ul {
 .cart-msg, .flash-msg {
   font-weight: bold;
 }
+
+.greeting {
+  margin-bottom: 40px;
+}

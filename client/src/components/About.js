@@ -12,17 +12,15 @@ class About extends Component {
         </section>
 
         <section className="about">
-          <div>
+          <div className="greeting">
             <h5>Hi There!</h5>
-          </div>
-          <div>
-            We are a family owned business operating since 1934. Only recently (2018) have we decided to branch out and take advantage of the world wide web. While we continue to maintain our store front in sunny California, right at the heart of San Francisco, we believe in opening ourselves up to the rest of the world by going online. Our goal is simple: to share stories with others through our collection of rare items. We are a team of archeologists, world travelers, and historians who all share the common interest of discovering the supernatural. If it looks wierd and out of this world, then chances are we'll be there to investigate.
+            <p>
+              We are a family owned business operating since 1934. Only recently (2018) have we decided to branch out and take advantage of the world wide web. While we continue to maintain our store front in sunny California, right at the heart of San Francisco, we believe in opening ourselves up to the rest of the world by going online. Our goal is simple: to share stories with others through our collection of rare items. We are a team of archeologists, world travelers, and historians who all share the common interest of discovering the supernatural. If it looks wierd and out of this world, then chances are we'll be there to investigate.
+            </p>
           </div>
 
-          <div>
+          <div className="why">
             <h5>Why Us</h5>
-          </div>
-          <div>
             <p>
               You might be wondering what makes us unique.
             </p>
@@ -40,6 +38,10 @@ class About extends Component {
             </p>
           </div>
         </section>
+
+        <footer className="contact">
+          Contact Us
+        </footer>
       </div>
     )
   }
