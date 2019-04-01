@@ -208,12 +208,22 @@ ul {
   margin-bottom: 40px;
 }
 
-.all-items {
+.items-section {
+  /*border: 3px solid black;*/
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
-.all-items > div > img {
-  border: 3px solid red;
-  width: 300px;
-  height: 50%;
+.items-section div {
+  border: 3px solid lightgrey;
+  margin: 90px 30px 30px 30px;
+}
+
+.items-section div img {
+  height: 200px;
+  width: 200px;
 }

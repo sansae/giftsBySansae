@@ -24,11 +24,9 @@ class Item extends React.Component {
           </div>
         </section>
 
-        <section>
-          <div className="all-items">
+        <div className="items-section">
             {divItems}
-          </div>
-        </section>
+        </div>
       </div>
     )
   }
