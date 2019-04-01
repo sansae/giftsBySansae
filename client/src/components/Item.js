@@ -25,7 +25,7 @@ class Item extends React.Component {
         </section>
 
         <section>
-          <div>
+          <div className="all-items">
             {divItems}
           </div>
         </section>
