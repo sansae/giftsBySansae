@@ -7,7 +7,7 @@ class About extends Component {
         <section className="App-header">
           <div className="page-header">
             <h3>About Us</h3>
-            <i class="far fa-grin"></i>
+            <i className="far fa-grin"></i>
           </div>
         </section>
 

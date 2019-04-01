@@ -23,7 +23,7 @@ class Navigation extends React.Component {
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={1} href="#">
-                Items
+                <Link to="item">Items</Link>
               </NavItem>
               <NavItem eventKey={2} href="#">
                 <Link to="signup">Sign-Up</Link>
