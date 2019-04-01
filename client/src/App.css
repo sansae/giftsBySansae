@@ -209,21 +209,30 @@ ul {
 }
 
 .items-section {
-  /*border: 3px solid black;*/
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  border: 3px solid black;
   width: 80%;
   margin: 0 auto;
+  text-align: center;
   margin-top: 30px;
 }
 
 .items-section div {
   border: 3px solid lightgrey;
-  margin: 90px 30px 30px 30px;
+  display: inline-block;
+  margin: 70px;
 }
+
+/*.items-section div img {
+  height: 200px;
+  width: 200px;
+  transition: width 2s;
+}*/
 
 .items-section div img {
   height: 200px;
   width: 200px;
 }
+
+/*.items-section div img:hover {
+  width: 270px;
+}*/
