@@ -8,6 +8,10 @@ class Navigation extends React.Component {
   render() {
     return (
       <div className="navigation">
+        <h1 className="custom-brand">
+          Gifts by Sansae
+        </h1>
+
         <Navbar className="custom-navbar">
           <Navbar.Header>
             <Navbar.Toggle />
@@ -34,9 +38,6 @@ class Navigation extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <h1 className="custom-brand">
-          Gifts by Sansae
-        </h1>
       </div>
     )
   }
