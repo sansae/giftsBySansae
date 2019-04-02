@@ -145,6 +145,7 @@ class Home extends React.Component {
               src={this.state.currentImg.src}
               alt={this.state.currentImg.name}>
             </img>
+            <div className="enlarge">click to enlarge</div>
 
             {isOpen && (
               <Lightbox

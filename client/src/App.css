@@ -64,13 +64,28 @@ tr:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
 
 .display .item img {
   width: 28vw;
   height: 28vw;
   border: 3px solid lightgrey;
   cursor: pointer;
+}
+
+.enlarge {
+  color: white;
+  position: absolute;
+  top: 5%;
+  opacity: 0;
+  transition: 1s;
+}
+
+/* selector + selector follows the adjacent-sibling selector CSS Combinator */
+.display .item img:hover + .enlarge {
+  opacity: 1;
 }
 
 .item-description {
@@ -238,4 +253,21 @@ ul {
   .items-section div img:hover {
     margin: 24px;
   }
+}
+
+@media only screen and (max-width: 500px) {
+  .enlarge {
+    opacity: 1;
+    font-size: 10px;
+  }
+
+  .display > .item {
+    height: 39vw;
+  }
+
+  .display .item img {
+    width: 38vw;
+    height: 38vw;
+  }
+
 }
