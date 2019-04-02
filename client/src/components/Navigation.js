@@ -12,7 +12,7 @@ class Navigation extends React.Component {
           Gifts by Sansae
         </h1>
 
-        <Navbar className="custom-navbar">
+        <Navbar collapseOnSelect className="custom-navbar">
           <Navbar.Header>
             <Navbar.Toggle />
           </Navbar.Header>
