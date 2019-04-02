@@ -274,7 +274,22 @@ ul {
     width: 12vw;
     height: 10vw;
   }
+
+  .items-section div {
+    margin-bottom: 40px;
+  }
+
+  .items-section div img {
+    margin: 0 auto;
+  }
+
+  .items-section div img:hover {
+    width: 250px;
+    height: 250px;
+    margin: -35px;
+  }
 }
+
 @media only screen and (max-width: 815px) {
   .about {
     margin-left: 30px;
