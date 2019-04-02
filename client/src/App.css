@@ -231,5 +231,11 @@ ul {
 .items-section div img:hover {
   width: 250px;
   height: 250px;
-  margin: 24px;
+  margin: 25px;
+}
+
+@media only screen and (min-width: 1350px) {
+  .items-section div img:hover {
+    margin: 24px;
+  }
 }
