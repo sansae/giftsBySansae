@@ -209,7 +209,7 @@ ul {
 }
 
 .items-section {
-  border: 3px solid black;
+  /*border: 3px solid lightgrey;*/
   width: 80%;
   margin: 0 auto;
   text-align: center;
@@ -217,22 +217,19 @@ ul {
 }
 
 .items-section div {
-  border: 3px solid lightgrey;
   display: inline-block;
-  margin: 70px;
+  margin: 30px;
 }
-
-/*.items-section div img {
-  height: 200px;
-  width: 200px;
-  transition: width 2s;
-}*/
 
 .items-section div img {
-  height: 200px;
-  width: 200px;
+  height: 180px;
+  width: 180px;
+  margin: 60px;
+  transition: width 1s, height 1s, margin 1s;
 }
 
-/*.items-section div img:hover {
-  width: 270px;
-}*/
+.items-section div img:hover {
+  width: 250px;
+  height: 250px;
+  margin: 24px;
+}
